@@ -1,4 +1,10 @@
-# Quartz v4
+# Quartz v4 (modified)
+
+This has been customized for my needs in regards to the school website that I deploy using this tool.
+
+The main customization so far is that a folder's page will render like if a "index.md" note is present if a note of the same name as the folder exists within its root.
+
+---
 
 > “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
 
