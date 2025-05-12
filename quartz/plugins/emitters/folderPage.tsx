@@ -76,17 +76,20 @@ function computeFolderInfo(
         },
       }),
     ]),
-  )
+  );
 
   // Update with actual content if available
   for (const [tree, file] of content) {
-    const slug = stripSlashes(simplifySlug(file.data.slug!)) as SimpleSlug
-    if (folders.has(slug)) {
-      folderInfo[slug] = [tree, file]
+    const slug = stripSlashes(simplifySlug(file.data.slug!)) as SimpleSlug;
+
+    // Check if the file matches the folder name or is an index file
+    if (folders.has(slug) || folders.has(path.dirname(slug) as SimpleSlug)) {
+      const folderName = folders.has(slug) ? slug : (path.dirname(slug) as SimpleSlug);
+      folderInfo[folderName] = [tree, file];
     }
   }
 
-  return folderInfo
+  return folderInfo;
 }
 
 function _getFolders(slug: FullSlug): SimpleSlug[] {
