@@ -8,7 +8,7 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "Quartz 4",
+    pageTitle: "school",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
@@ -16,8 +16,14 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     locale: "en-US",
-    baseUrl: "quartz.jzhao.xyz",
-    ignorePatterns: ["private", "templates", ".obsidian"],
+    baseUrl: "school.willjasen.com",
+    ignorePatterns: [
+        "building.md",
+        "🏫 College/to-do",
+        "🏫 College/Fall 2006/English 1010",
+        "🏫 College/Fall 2006/Probability and Statistics",
+        "🏫 College/Fall 2006/Student In University",
+        "🏫 College/Fall 2006/Web Page"],
     defaultDateType: "modified",
     theme: {
       fontOrigin: "googleFonts",
@@ -57,7 +63,7 @@ const config: QuartzConfig = {
     transformers: [
       Plugin.FrontMatter(),
       Plugin.CreatedModifiedDate({
-        priority: ["frontmatter", "git", "filesystem"],
+        priority: ["frontmatter", "filesystem"],
       }),
       Plugin.SyntaxHighlighting({
         theme: {
