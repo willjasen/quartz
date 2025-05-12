@@ -38,7 +38,16 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer({
+      filterFn: (node) => {
+
+        // set containing names of everything you want to filter out
+        const omit = new Set(["Fall 2006"])
+
+        // return everything but what to omit and if the node is not a folder
+        return !(omit.has(node.displayName) && !node.isFolder)
+      },
+    }),
   ],
   right: [
     Component.Graph(),
