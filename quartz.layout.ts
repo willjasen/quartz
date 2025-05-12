@@ -40,12 +40,21 @@ export const defaultContentPageLayout: PageLayout = {
     }),
     Component.Explorer({
       filterFn: (node) => {
+        
+        // const noteName = node.data?.filePath.split("/").at(-1)?.split(".")[0];
+        // const parentFolderName = node.data?.filePath.split("/").at(-2);
 
-        // set containing names of everything you want to filter out
-        const omit = new Set(["Fall 2006"])
+        // if(noteName || parentFolderName) {
+        //   console.log("Note name: ", noteName);
+        //   console.log("Parent folder name: ", parentFolderName);
+        //   console.log("Whatever this is: ", (noteName !== parentFolderName) !== true)
+        // }
+        
+        // return (noteName !== parentFolderName) !== true;
 
-        // return everything but what to omit and if the node is not a folder
-        return !(omit.has(node.displayName) && !node.isFolder)
+        //return (node.data?.filePath.endsWith(node.data?.title + ".md") !== true);
+        
+        return true
       },
     }),
   ],
